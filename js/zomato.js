@@ -3,7 +3,7 @@ key =1eccc25c7331c8db8a6403a5c40c24e7
 
 url = https://developers.zomato.com/api/v2.1/locations?query=greek
 
-
+citi-ID: 288
 param =
 
 
@@ -23,7 +23,8 @@ $(".btn").on("click", function() {
 
   // Built by LucyBot. www.lucybot.com
   // var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-  var url = "https://developers.zomato.com/api/v2.1/locations?query=greek&user-key=1eccc25c7331c8db8a6403a5c40c24e7";
+  // var url = "https://developers.zomato.com/api/v2.1/locations?query=greek&lat=-84.3880&lon=33.7490&count=10";
+  var url = "https://developers.zomato.com/api/v2.1/location_details?entity_id=288&entity_type=city";
 
   // url += '?' + $.param({
   //   'api-key': "bd4a0a2e3fe049879ea7f7df712460a1",
@@ -36,6 +37,9 @@ $(".btn").on("click", function() {
   $.ajax({
     url: url,
     method: 'GET',
+    headers: {
+      'user-key': '1eccc25c7331c8db8a6403a5c40c24e7'
+    }
   }).done(function(result) {
     console.log(result);
     console.log('complete');
