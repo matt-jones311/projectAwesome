@@ -1,7 +1,7 @@
 /*
-key =1eccc25c7331c8db8a6403a5c40c24e7
+key = P4iFDNrGCaaXBZEO2V1yQJpVRPqqWKE9W_QT3j8CSgYHLiq4oFWqsndeM0XWpKhwv0JLY0EePccFThetkQJkL9oPptIvv_xVYtsWOvgM8hirpsVoMeltPndfc1ljWnYx
 
-url = https://developers.zomato.com/api/v2.1/locations?query=greek
+url = https://api.yelp.com/v3/businesses/search
 
 citi-ID: 288
 param =
