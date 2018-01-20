@@ -1,5 +1,4 @@
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDdVcKNzNfmkkcJojS3jYhVm_D8psz3ZGM",
@@ -23,5 +22,3 @@ $(".fi-like").on("click", function() {
         likeCount: likeCounter
       });
     });
-
-</script>
