@@ -27,10 +27,26 @@ hr{
 }
 
 
-table{
-  margin;
+.videoLine{
+  width:100;
 }
 
+#footer{
+  background-color:#225470;
+  opacity:.33;
+  height:5rem;
+  margin-top: 5rem;
+}
+
+.footerText{
+  color:white;
+  padding-top:2rem;
+}
+
+.linkButton{
+   background: black;
+   color:white;
+}
 
 
 
