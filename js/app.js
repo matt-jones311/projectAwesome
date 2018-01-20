@@ -8,6 +8,7 @@
 
    // Here we run our AJAX call to the OpenWeatherMap API
    $.ajax({
+<<<<<<< HEAD
        url: queryURL,
        method: "GET"
      })
@@ -16,3 +17,13 @@
        console.log(response);
        $('#currentTemp').html('The Current Temperature is: ' + response.main.temp);
      });
+=======
+           url: queryURL,
+           method: "GET"
+       })
+       // We store all of the retrieved data inside of an object called "response"
+       .done(function(response) {
+       	console.log(response);
+       	$('#currentTemp').html('The Current Temperature is: ' + response.main.temp );
+       });
+>>>>>>> a2dbf88b8ca306e90583660d909440a76e24ebbb
