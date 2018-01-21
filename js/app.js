@@ -66,7 +66,7 @@ var foodData = firebase.database();
    
     console.log(ratingInput);
 
-    // Creates local "temporary" object for holding train data
+    // Creates local "temporary" object for holding food data
     // Will push this to firebase
     var newRestaurant = {
       name:  restaurantName,
@@ -76,7 +76,7 @@ var foodData = firebase.database();
       
     }
 
-    // pushing trainInfo to Firebase
+    // pushing foodInfo to Firebase
     foodData.ref().push(newRestaurant);
     
 
@@ -103,7 +103,7 @@ var foodData = firebase.database();
     
     
     
-    // Append train info to table on page
+    // Append food info to table on page
     $("#foodTable > tbody").append("<tr><td>" + firebaseName + "</td><td>" + firebaseFood + "</td><td>"+ firebasePrice + "</td><td>" + firebaseRating + "</td></tr>");
 
   });
