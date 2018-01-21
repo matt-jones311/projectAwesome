@@ -10,29 +10,31 @@ param =
 */
 
 $(".btn").on("click", function() {
-  var searchTerm = $("#searchterm").val();
+  var searchTerm = $("#search-query").val().trim();
 
   console.log(searchTerm);
 
   // URL
-  var url = "https://api.yelp.com/v3/businesses/search?term=delis&location=Atlanta";
+  var url = "https://api.yelp.com/v3/businesses/search?location=Atlanta";
   // var url = "https://api.yelp.com/v3/businesses/search?term=delis&location=&latitude=37.786882&longitude=-122.399972";
 
-  // url += '?' + $.param({
-  //   'api-key': "bd4a0a2e3fe049879ea7f7df712460a1",
-  //   'q': searchTerm,
-  //   'page': 0
-  // });
+  //adding paramaters to URL
+  url += '?' + $.param({
+    'location': "Atlanta",
+    'term': searchTerm
+  });
 
-  //adding this because
+  //adding this because there is an error when calling API
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
   });
 
-
+  //log url
   console.log(url);
+
+  //API Call
   $.ajax({
     url: url,
     method: 'GET',
@@ -43,12 +45,19 @@ $(".btn").on("click", function() {
     console.log(result);
     console.log('complete');
     //code goes here
+    printResponse(result);
 
   }).fail(function(err) {
     throw err;
   })
-
-  //button click
-
-
 })
+
+function printResponse(respose) {
+  var resteraunts = respose.businesses;
+
+  for (var i = 0; i < 10; i++) {
+    console.log(resteraunts[i]);
+    $("#employee-table > tbody").append("<tr><td>" + resteraunts[i] + "</td><td>" + resteraunts[i].display_phone + "</td><td>" +
+      resteraunts[i].price + "</td><td>" + resteraunts[i].rating + "</td></tr>");
+  }
+}
