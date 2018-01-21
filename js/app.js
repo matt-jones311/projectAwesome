@@ -18,6 +18,7 @@ $(document).ready(function(){
      .done(function(response) {
        console.log(response);
        $('#currentTemp').html('The Current Temperature is: ' + response.main.temp);
+       $("#wind").html('Wind Speed: ' + response.wind.speed);
      });
 
       
