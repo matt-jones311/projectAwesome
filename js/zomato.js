@@ -11,20 +11,12 @@ param =
 
 $(".btn").on("click", function() {
   var searchTerm = $("#searchterm").val();
-  var num = $("#numberrecords").val();
-  var startDate = $("#startyear").val();
-  var endDate = $("#endyear").val();
+
   console.log(searchTerm);
-  console.log(num);
-  console.log(startDate);
-  console.log(endDate);
 
-
-
-  // Built by LucyBot. www.lucybot.com
-  // var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-  // var url = "https://developers.zomato.com/api/v2.1/locations?query=greek&lat=-84.3880&lon=33.7490&count=10";
-  var url = "https://developers.zomato.com/api/v2.1/location_details?entity_id=288&entity_type=city";
+  // URL
+  var url = "https://api.yelp.com/v3/businesses/search?term=delis&location=Atlanta";
+  // var url = "https://api.yelp.com/v3/businesses/search?term=delis&location=&latitude=37.786882&longitude=-122.399972";
 
   // url += '?' + $.param({
   //   'api-key': "bd4a0a2e3fe049879ea7f7df712460a1",
@@ -32,33 +24,25 @@ $(".btn").on("click", function() {
   //   'page': 0
   // });
 
+  //adding this because
+  jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
+
 
   console.log(url);
   $.ajax({
     url: url,
     method: 'GET',
     headers: {
-      'user-key': '1eccc25c7331c8db8a6403a5c40c24e7'
+      'Authorization': 'Bearer P4iFDNrGCaaXBZEO2V1yQJpVRPqqWKE9W_QT3j8CSgYHLiq4oFWqsndeM0XWpKhwv0JLY0EePccFThetkQJkL9oPptIvv_xVYtsWOvgM8hirpsVoMeltPndfc1ljWnYx'
     }
   }).done(function(result) {
     console.log(result);
     console.log('complete');
-
-    for (var i = 0; i < num; i++) {
-      var newRecord = result.response.docs[i];
-      var title = newRecord.headline.main;
-      var author = newRecord.byline.original;
-
-      var newHead = $("<h3>");
-      newHead.text(title);
-      var newName = $("<h4>");
-      newName.text(author);
-
-      $(".output").append(newHead);
-      $(".output").append(newName);
-
-    }
-
+    //code goes here
 
   }).fail(function(err) {
     throw err;
