@@ -6,15 +6,16 @@ url = https://api.yelp.com/v3/businesses/search
 citi-ID: 288
 param =
 
-
 */
+
+
 
 $(".btn").on("click", function() {
   var searchTerm = $("#search-query").val().trim();
 
   console.log(searchTerm);
 
-  // URL
+  // URL7 +
   var url = "https://api.yelp.com/v3/businesses/search?location=Atlanta";
   // var url = "https://api.yelp.com/v3/businesses/search?term=delis&location=&latitude=37.786882&longitude=-122.399972";
 
@@ -57,7 +58,7 @@ function printResponse(respose) {
 
   for (var i = 0; i < 10; i++) {
     console.log(resteraunts[i]);
-    $("#employee-table > tbody").append("<tr><td>" + resteraunts[i] + "</td><td>" + resteraunts[i].display_phone + "</td><td>" +
+    $("#restaurant-table > tbody").append("<tr><td>" + resteraunts[i].name + "</td><td>" + resteraunts[i].display_phone + "</td><td>" +
       resteraunts[i].price + "</td><td>" + resteraunts[i].rating + "</td></tr>");
   }
 }
