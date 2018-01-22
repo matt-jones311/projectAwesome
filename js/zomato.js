@@ -22,7 +22,9 @@ $(".btn").on("click", function() {
   //adding paramaters to URL
   url += '?' + $.param({
     'location': "Atlanta",
-    'term': searchTerm
+    'term': searchTerm,
+    'limit': 10,
+    'sourt_by': 'rating'
   });
 
   //adding this because there is an error when calling API
@@ -45,7 +47,7 @@ $(".btn").on("click", function() {
   }).done(function(result) {
     console.log(result);
     console.log('complete');
-    //code goes here
+    //Print the first 10 in the table
     printResponse(result);
 
   }).fail(function(err) {
@@ -56,7 +58,7 @@ $(".btn").on("click", function() {
 function printResponse(respose) {
   var resteraunts = respose.businesses;
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < resteraunts.length; i++) {
     console.log(resteraunts[i]);
     $("#restaurant-table > tbody").append("<tr><td>" + resteraunts[i].name + "</td><td>" + resteraunts[i].display_phone + "</td><td>" +
       resteraunts[i].price + "</td><td>" + resteraunts[i].rating + "</td></tr>");
