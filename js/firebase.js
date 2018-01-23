@@ -2,15 +2,13 @@
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBOuq1AuSgrLlj-z_WikNzenTu0XZKkNIo",
-    authDomain: "allaboutatlanta-b119c.firebaseapp.com",
-    databaseURL: "https://allaboutatlanta-b119c.firebaseio.com",
-    projectId: "allaboutatlanta-b119c",
-    storageBucket: "allaboutatlanta-b119c.appspot.com",
-    messagingSenderId: "142298587261"
+    apiKey: "AIzaSyDdVcKNzNfmkkcJojS3jYhVm_D8psz3ZGM",
+    authDomain: "project-awesome-fcb21.firebaseapp.com",
+    databaseURL: "https://project-awesome-fcb21.firebaseio.com",
+    projectId: "project-awesome-fcb21",
+    storageBucket: "project-awesome-fcb21.appspot.com",
+    messagingSenderId: "705424388035"
   };
-  firebase.initializeApp(config);
-
   
   firebase.initializeApp(config);
   // VARIABLES
