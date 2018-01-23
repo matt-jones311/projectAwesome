@@ -14,8 +14,8 @@
     // --------------------------------------------------------------------------------
     var database = firebase.database();
     var likeCounter = 0;
-    // FUNCTIONS + EVENTS
-    // --------------------------------------------------------------------------------
+
+    
 $(".fi-like").on("click", function() {
       likeCounter++;
       database.ref().set({
