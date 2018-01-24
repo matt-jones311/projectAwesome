@@ -10,7 +10,7 @@ param =
 
 
 
-$(".btn").on("click", function() {
+$("#search-btn").on("click", function() {
   var searchTerm = $("#search-query").val().trim();
 
   console.log(searchTerm);
