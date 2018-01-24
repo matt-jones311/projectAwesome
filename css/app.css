@@ -7,11 +7,19 @@
     left:10%;
 
 }
-i{
+#navIcon{
 	color:white;
 	margin-left:.75rem;
 	margin:right:.75rem;
 }
+
+ #currentTemp{
+  padding-bottom: 0rem;
+  padding-top:.5rem;
+  }
+
+
+
 h1, h3{
 	font-family: 'Permanent Marker', cursive;
 	margin: auto;
