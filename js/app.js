@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 
  // Initialize Firebase
- var config = {
+ var authconfig = {
     apiKey: "AIzaSyBOuq1AuSgrLlj-z_WikNzenTu0XZKkNIo",
     authDomain: "allaboutatlanta-b119c.firebaseapp.com",
     databaseURL: "https://allaboutatlanta-b119c.firebaseio.com",
@@ -33,14 +33,56 @@ $(document).ready(function(){
     storageBucket: "allaboutatlanta-b119c.appspot.com",
     messagingSenderId: "142298587261"
   };
- firebase.initializeApp(config);
+ firebase.initializeApp(authconfig);
+
+
+//setting up the authentication with google
+
+ var provider = new firebase.auth.GoogleAuthProvider();
+ provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
+ firebase.auth().languageCode = 'en';
+// To apply the default browser preference instead of explicitly setting it.
+// firebase.auth().useDeviceLanguage();
+
+provider.setCustomParameters({
+  'login_hint': 'user@example.com'
+});
+
+$('#login').on('click', function (e){
+  // e.preventDefault();
+  console.log('something');
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    console.log(result);
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+  console.error(error);
+
+});
+
+});
+
+
+
 
 
 
 
    
 
-var foodData = firebase.database();
+/*var foodData = firebase.database();
   // 2. Button for adding Restaurants
   $("#addRestaurantBtn").on("click", function(){
 
@@ -99,7 +141,9 @@ var foodData = firebase.database();
     $("#foodTable > tbody").append("<tr><td>" + firebaseName + "</td><td>" + firebaseFood + "</td><td>"+ firebasePrice + "</td><td>" + firebaseRating + "</td></tr>");
 
   });
+  */
 });
+
 
 
 
