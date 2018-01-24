@@ -10,7 +10,9 @@ param =
 
 
 
+
 $("#search-btn").on("click", function() {
+
   var searchTerm = $("#search-query").val().trim();
 
   console.log(searchTerm);
@@ -60,7 +62,13 @@ function printResponse(respose) {
 
   for (var i = 0; i < resteraunts.length; i++) {
     console.log(resteraunts[i]);
+
+    var dollaBillsYhall = resteraunts[i].price
+
+    if (!dollaBillsYhall) {
+      dollaBillsYhall = "$";
+    }
     $("#restaurant-table > tbody").append("<tr><td>" + resteraunts[i].name + "</td><td>" + resteraunts[i].display_phone + "</td><td>" +
-      resteraunts[i].price + "</td><td>" + resteraunts[i].rating + "</td></tr>");
+      dollaBillsYhall + "</td><td>" + resteraunts[i].rating + "</td></tr>");
   }
 }
