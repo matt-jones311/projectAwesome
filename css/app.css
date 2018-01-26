@@ -11,18 +11,24 @@
     left:10%;
 
 }
-i{
+#navIcon{
 	color:white;
 	margin-left:.75rem;
 	margin:right:.75rem;
 }
+
+ #currentTemp{
+  padding-bottom: 0rem;
+  padding-top:.5rem;
+  }
+
+
+
 h1, h3{
 	font-family: 'Permanent Marker', cursive;
 	margin: auto;
 }
-.martaTitle{
-	color:black;
-}
+
 hr{
 	border-color:black;
 	width:100%;
@@ -30,11 +36,31 @@ hr{
 
 }
 
-
-table{
-  margin;
+#restaurantButton{
+  margin-top:1rem;
 }
 
+
+.videoLine{
+  width:100;
+}
+
+#footer{
+  background-color:#225470;
+  opacity:.33;
+  height:5rem;
+  margin-top: 5rem;
+}
+
+.footerText{
+  color:white;
+  padding-top:2rem;
+}
+
+.linkButton{
+   background: black;
+   color:white;
+}
 
 
 
