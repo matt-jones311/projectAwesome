@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  user-select: none;
+}
+
 .header-nav {
     font-size: 2rem;
  	position:absolute;
