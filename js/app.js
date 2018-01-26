@@ -1,4 +1,19 @@
- //zomato api key  19075edacaf51024c3d48b11b7d30b97
+ 
+ function present(e) {
+     var bgVid = $("#bg-video");
+     var bgVidLocation = backgroundImages["" + e];
+     if (bgVidLocation) {
+         bgVid.attr("src", bgVidLocation);
+     } else {
+         bgVid.attr("src", backgroundImages['8']);
+     }
+
+
+ }
+
+$(document).ready(function(){
+   //zomato api key  19075edacaf51024c3d48b11b7d30b97
+
 
 
 
@@ -36,17 +51,7 @@
          }
      });
 
- function present(e) {
-     var bgVid = $("#bg-video");
-     var bgVidLocation = backgroundImages["" + e];
-     if (bgVidLocation) {
-         bgVid.attr("src", bgVidLocation);
-     } else {
-         bgVid.attr("src", backgroundImages['8']);
-     }
 
-
- }
 
  // 2xx => thunderstorm
  // 3xx => drizzle
@@ -111,6 +116,12 @@
      });
 
  });
+
+
+
+  
+})
+
 
  /*var foodData = firebase.database();
    // 2. Button for adding Restaurants
