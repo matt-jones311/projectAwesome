@@ -1,4 +1,11 @@
+ var backgroundImages = {
+     '2': 'images/rainordrizzle.mp4',
+     '8': 'images/clear.mp4',
+     '9': 'images/extreme.mp4',
+     '6': 'images/snow.mp4'
+ };
  
+
  function present(e) {
      var bgVid = $("#bg-video");
      var bgVidLocation = backgroundImages["" + e];
@@ -23,12 +30,7 @@ $(document).ready(function(){
  var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
      "q=Atlanta,Georgia&units=imperial&appid=" + APIKey;
 
- var backgroundImages = {
-     '2': 'images/rainordrizzle.mp4',
-     '8': 'images/clear.mp4',
-     '9': 'images/extreme.mp4',
-     '6': 'images/snow.mp4'
- };
+ 
 
  // Here we run our AJAX call to the OpenWeatherMap API
  $.ajax({
