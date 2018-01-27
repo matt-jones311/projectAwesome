@@ -1,5 +1,5 @@
 // Initialize Firebase
-  var config = {
+  var authconfig = {
     apiKey: "AIzaSyDdVcKNzNfmkkcJojS3jYhVm_D8psz3ZGM",
     authDomain: "project-awesome-fcb21.firebaseapp.com",
     databaseURL: "https://project-awesome-fcb21.firebaseio.com",
@@ -8,7 +8,7 @@
     messagingSenderId: "705424388035"
   };
   
-  firebase.initializeApp(config);
+  firebase.initializeApp(authconfig);
 
   var database = firebase.database();
   

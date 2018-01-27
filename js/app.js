@@ -81,6 +81,108 @@ $(document).ready(function(){
  firebase.initializeApp(authconfig);
 
 
+
+
+
+
+ 
+  var database = firebase.database();
+  
+  var likeCounter = 0;
+  var likeCounterR1 = 0;
+  var likeCounterR2 = 0;
+  var likeCounterR3 = 0;
+    // FUNCTIONS + EVENTS
+    // --------------------------------------------------------------------------------
+    $(".fi-like").on("click", function() {
+      likeCounter++;
+      database.ref().update({
+        likeCount: likeCounter
+      });
+    });
+    // MAIN PROCESS + INITIAL CODE
+    // --------------------------------------------------------------------------------
+    database.ref().on("value", function(snapshot) {
+      
+      console.log(snapshot.val());
+      
+      $("#numberOfLikes").text(snapshot.val().likeCount);
+      
+      likeCounter = snapshot.val().likeCount;
+    
+    }, function(errorObject) {
+      
+      console.log("The read failed: " + errorObject.code);
+    
+    });
+
+   
+
+    $("#restaurantLikes1").on("click", function(){
+      likeCounterR1++;
+      database.ref().update({
+        likeCountR1: likeCounterR1
+      });
+    });
+    database.ref().on("value", function(snapshot) {
+      
+      console.log(snapshot.val());
+      
+      $("#numberOfLikesR1").text(snapshot.val().likeCountR1);
+      
+      likeCounterR1 = snapshot.val().likeCountR1;
+    
+    }, function(errorObject) {
+      
+      console.log("The read failed: " + errorObject.code);
+    
+    });
+
+  
+    
+    $("#restaurantLikes2"). on("click", function(){
+      likeCounterR2++;
+      database.ref().update({
+        likeCountR2: likeCounterR2
+      });
+    });
+    database.ref().on("value", function(snapshot) {
+      
+      console.log(snapshot.val());
+      
+      $("#numberOfLikesR2").text(snapshot.val().likeCountR2);
+      
+      likeCounterR2 = snapshot.val().likeCountR2;
+    
+    }, function(errorObject) {
+      
+      console.log("The read failed: " + errorObject.code);
+    
+    });
+
+   
+
+    $("#restaurantLikes3"). on("click", function(){
+      likeCounterR3++;
+      database.ref().update({
+        likeCountR3: likeCounterR3
+      });
+    });
+    database.ref().on("value", function(snapshot) {
+      
+      console.log(snapshot.val());
+      
+      $("#numberOfLikesR3").text(snapshot.val().likeCountR3);
+      
+      likeCounterR3 = snapshot.val().likeCountR3;
+    
+    }, function(errorObject) {
+      
+      console.log("The read failed: " + errorObject.code);
+    
+    });
+
+
  //setting up the authentication with google
 
  var provider = new firebase.auth.GoogleAuthProvider();
@@ -123,65 +225,3 @@ $(document).ready(function(){
 
   
 })
-
-
- /*var foodData = firebase.database();
-   // 2. Button for adding Restaurants
-   $("#addRestaurantBtn").on("click", function(){
-
-     // Grabs user input and assign to variables
-     var restaurantName = $("#restaurantInput").val().trim();
-     var foodName = $("#foodInput").val().trim();
-     var priceInput = $("#priceInput").val().trim();
-     
-     var ratingInput = $("#ratingInput").val().trim();
-
-     // Test for variables entered
-     console.log(restaurantName);
-     console.log(foodName);
-     console.log(priceInput);
-    
-     console.log(ratingInput);
-
-     // Creates local "temporary" object for holding food data
-     // Will push this to firebase
-     var newRestaurant = {
-       name:  restaurantName,
-       food: foodName,
-       price: priceInput,
-       rating: ratingInput,
-       
-     }
-
-     // pushing foodInfo to Firebase
-     foodData.ref().push(newRestaurant);
-     
-
-     // clear text-boxes
-     $("#restaurantInput").val("");
-     $("#foodInput").val("");
-     $("#priceInput").val("");
-     $("#ratingInput").val("");
-     
-
-     // Prevents page from refreshing
-     return false;
-   });
-
-   foodData.ref().on("child_added", function(childSnapshot, prevChildKey){
-
-     console.log(childSnapshot.val());
-
-     // assign firebase variables to snapshots.
-     var firebaseName = childSnapshot.val().name;
-     var firebaseFood = childSnapshot.val().food;
-     var firebasePrice = childSnapshot.val().price;
-     var firebaseRating = childSnapshot.val().rating;
-     
-     
-     
-     // Append food info to table on page
-     $("#foodTable > tbody").append("<tr><td>" + firebaseName + "</td><td>" + firebaseFood + "</td><td>"+ firebasePrice + "</td><td>" + firebaseRating + "</td></tr>");
-
-   });
-   */
