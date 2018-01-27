@@ -67,6 +67,11 @@ $("#search-btn").on("click", function() {
     //Print the first 10 in the table
     printResponse(result);
 
+    //Scrol to point
+    document.querySelector('thead').scrollIntoView({
+      behavior: 'smooth'
+    });
+
   }).fail(function(err) {
     throw err;
   })
