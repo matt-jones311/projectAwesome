@@ -13,9 +13,22 @@ param =
 
 $("#search-btn").on("click", function() {
 
-  var searchTerm = $("#search-query").val().trim();
+  //clear the contents incase searching again
+  $("#restaurant-table > tbody").children().remove();
 
-  console.log(searchTerm);
+  var searchTerm = $("#search-query").val().trim();
+  var price = $("#drop-down").val().trim();
+
+  //change to index for yelp
+  if (price === "$$$$") {
+    price = 4;
+  } else if (price === "$$$") {
+    price = 3;
+  } else if (price === "$$") {
+    price = 2;
+  } else if (price === "$") {
+    price = 1;
+  }
 
   // URL7 +
   var url = "https://api.yelp.com/v3/businesses/search?location=Atlanta";
@@ -25,6 +38,8 @@ $("#search-btn").on("click", function() {
   url += '?' + $.param({
     'location': "Atlanta",
     'term': searchTerm,
+    'price': price,
+    'open_now	': true,
     'limit': 10,
     'sourt_by': 'rating'
   });

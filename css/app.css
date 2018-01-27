@@ -58,12 +58,8 @@ hr {
   color: white;
 }
 
-#drop-down {
-  width: 60px;
-}
-
-#search-query {
-  width: 350px;
+#search-btn {
+  height: 39px;
 }
 
 * {

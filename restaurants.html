@@ -24,22 +24,26 @@
     <div class="header-content text-md-center">
       <h1>What are you feeling today?</h1>
       <div class='grid-x'>
-        <div class='large-2 cell'></div>
-        <div class='large-8 cell' id='formBody'>
+        <div class='large-8 small-centered columns' id='formBody'>
           <form>
             <div class="grid-x">
-              <div class="medium-12 cell vertical">
+              <div class="medium-8 cell vertical">
                 <label>
                   <input class="float-left" type="text" id="search-query" placeholder="Enter Your Favorite Cuisine">
+                </label>
+              </div>
+              <div class="medium-4">
+                <div class="input-group">
                   <select id="drop-down">
-                    <option placeholder="Price" value=""></option>
                     <option value="$">$</option>
                     <option value="$$">$$</option>
                     <option value="$$$">$$$</option>
                     <option value="$$$$">$$$$</option>
                   </select>
-                </label>
-                <button type="button" name="button" class="btn" id="search-btn">Search</button>
+                  <div class="input-group-button">
+                    <input type="button" id="search-btn" class="button" value="Submit">
+                  </div>
+                </div>
               </div>
             </div>
           </form>
