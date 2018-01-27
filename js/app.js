@@ -85,7 +85,7 @@ $(document).ready(function(){
 
 
 
- 
+
   var database = firebase.database();
   
   var likeCounter = 0;
@@ -224,4 +224,4 @@ $(document).ready(function(){
 
 
   
-})
+});
